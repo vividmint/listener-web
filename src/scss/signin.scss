@@ -1,0 +1,98 @@
+@import "./common";
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.header {
+    display: flex;
+    border-bottom-style: solid;
+    border-bottom-color: #f5f5f5;
+    border-bottom-width: 1.5px;
+    border-top-style: solid;
+    border-top-color: #f5f5f5;
+    border-top-width: 1.5px;
+}
+.footer {
+    display: flex;
+    border-bottom-style: solid;
+    border-bottom-color: #f5f5f5;
+    border-bottom-width: 1.5px;
+}
+.left {
+    display: flex;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 100%;
+}
+.phone-icon {
+    font-size: 35px;
+    color: #DCDCDC;
+    display: flex;
+    align-items: center;
+}
+.password-icon {
+    font-size: 45px;
+    color: #DCDCDC;
+    display: flex;
+    align-items: center;
+}
+.input {
+    border-style: solid;
+    border-color: #f5f5f5;
+    border-radius: 5px;
+    border-width: 1px;
+    margin: 6px 15px;
+    height: 45px;
+    width: 100%;
+    padding: 5px 15px;
+}
+.main-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 0 auto;
+    padding-right: 15px;
+}
+.button {
+    text-align: center;
+    justify-content: center;
+    background-color: $baseColor;
+    color: white;
+}
+.disabled {
+    cursor: default;
+    opacity: 0.45!important;
+    background-image: none!important;
+    box-shadow: none!important;
+    pointer-events: none!important;
+}
+.valid {
+    font-size: 14px;
+    color: white;
+    border-color: $baseColor;
+    border-style: solid;
+    border-width: 1px;
+    background-color: $baseColor;
+    height: 35px;
+    padding: 3px 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 27px;
+    margin-right: 25px;
+}
+.signin {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login {
+    font-size: 18px;
+    padding: 15px;
+    display: flex;
+    width: 90%;
+}

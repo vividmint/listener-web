@@ -1,0 +1,83 @@
+@import './common.scss';
+body {
+    background-color: white;
+}
+.title{
+  font-size: 18px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 65px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 8px;
+}
+.channel {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    margin-bottom: 10px;
+}
+.header {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #ecf0f1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+.header-left {
+    display: flex;
+    flex: 5;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 100px;
+}
+.name {
+    font-size: 20px;
+    font-weight: bolder;
+    padding-bottom: 8px;
+}
+.name a {
+    color: black;
+    text-decoration: none;
+}
+.number {
+    display: flex;
+    font-size: 16px;
+    color: #bdc3c7;
+}
+.header-right {
+position: absolute;
+right: 0;
+top: 0;
+padding-top: 15px;
+padding-right: 15px;
+
+}
+.footer {
+    min-height: 35px;
+    padding: 12px;
+    flex: auto;
+    font-size: 16px;
+    color: #95a5a6;
+    background-color: #fbfbfb;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
