@@ -1,46 +1,46 @@
-/"9
-// var cube = function (x,y){
-//   if (typeof(x)=="number"){
-//     y('2','3');
-//   return ;
-// }else {
-//   throw new Error("传入的参数必须是数字")
-//   // return "出错了"
-// }
-// }
-// try {
-//   var result = cube(5,function(p,q){
-//     console.log(p,q);
-//   });
-// } catch (e) {
-//   console.log(e);
-//   return;
-// }
-// console.log(result);
-// if (result == "出错了"){
-//   console.log("error");
-// }else{
-//   console.log(`没出错${result}`);
-// }
-//
 
-//
-// var a = typeof("s");
-// console.log(a);
+var cube = function (x,y){
+  if (typeof(x)=="number"){
+    y('2','3');
+  return ;
+}else {
+  throw new Error("传入的参数必须是数字")
+  // return "出错了"
+}
+}
+try {
+  var result = cube(5,function(p,q){
+    console.log(p,q);
+  });
+} catch (e) {
+  console.log(e);
+  return;
+}
+console.log(result);
+if (result == "出错了"){
+  console.log("error");
+}else{
+  console.log(`没出错${result}`);
+}
 
 
-// var get = function(url,cb){
-//   setTimeout(function(){
-//     cb({
-//       name:"john"
-//     });
-//   },1000);
-// }
-//
-//
-//
-//
-//
+
+var a = typeof("s");
+console.log(a);
+
+
+var get = function(url,cb){
+  setTimeout(function(){
+    cb({
+      name:"john"
+    });
+  },1000);
+}
+
+
+
+
+
 
 var result = get("http://biadu.com/xxx/",funtion(data)jhk);
 var xx = JSON.parse(result);
