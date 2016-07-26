@@ -26,7 +26,7 @@ moment.locale('zh-cn', {
     }
 });
 var start = 0,
-    host = "http://192.168.31.172:3000/",
+    host = " http://api.jiantingzhe.com/",
     account = "18613227075",
     limit = 4;
 $.getJSON(`${host}users/${account}/messages?limit=${limit}&start=${start}`, function(data, status) {

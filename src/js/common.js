@@ -1,5 +1,5 @@
 import $ from "jquery";
-var host = "http://192.168.31.172:3000/";
+var host = " http://api.jiantingzhe.com/";
 export var request = function(url, method = "get", body) {
     console.log(url);
     return new Promise(function(s, f) {

@@ -8,7 +8,7 @@ import "normalize.css";
 import "../assets/font-awesome/scss/font-awesome.scss";
 import "../scss/index.scss";
 var start = 0,
-    host = "http://192.168.31.172:3000/",
+    host = " http://api.jiantingzhe.com/",
     account = "18613227075",
     limit = 3;
 
