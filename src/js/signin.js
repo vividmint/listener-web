@@ -38,7 +38,7 @@ if($.trim($('#tel').val())=="")
  if($.trim($('#tel').val())!="")
   {
    var reg = /^(?:13d|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|4|5|6|7|8|9])-?d{5}(d{3}|*{3})$/;
-   if(!reg.test($.trim($('#mobile').val())))
+   if(!reg.test($.trim($('#tel').val())))
    {
     alert("手机号码格式不对！");
     return false;
