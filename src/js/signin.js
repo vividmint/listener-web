@@ -26,8 +26,25 @@ document.querySelector(".container").innerHTML=`  <div class="header">
   <div class="signin">
       <button class="button login">登录</button>
   </div>`
-var tel = $('#tel').val();
+var tel = $.trim($('#tel').val());
+
+
+if($.trim($('#tel').val())=="")
+ {
+  alert("手机号码不能为空！");
+  return false;
+ }
+
+ if($.trim($("#mobile").val())!="")
+  {
+   var reg = /^(?:13d|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|4|5|6|7|8|9])-?d{5}(d{3}|*{3})$/;
+   if(!reg.test($.trim($('#mobile').val())))
+   {
+    alert("手机号码格式不对！");
+    return false;
+   }
 console.log(tel);
+
 $(".valid").on("click", async function() {
     tel = $('#tel').val();
     console.log(`tel/${tel}/code`);
