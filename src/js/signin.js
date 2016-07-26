@@ -6,7 +6,9 @@ import {
 import "normalize.css";
 import "../assets/font-awesome/scss/font-awesome.scss";
 import "../scss/signin.scss";
-document.querySelector(".container").innerHTML=`  <div class="header">
+import notie from 'notie';
+
+document.querySelector(".container").innerHTML = `  <div class="header">
       <div class="left">
           <div class="phone-icon">
               <i class="fa fa-user"></i>
@@ -29,25 +31,25 @@ document.querySelector(".container").innerHTML=`  <div class="header">
 var tel = $.trim($('#tel').val());
 console.log(tel);
 
-if($.trim($('#tel').val())=="")
- {
-  alert("手机号码不能为空！");
-  return false;
- }
-
- if($.trim($('#tel').val())!="")
-  {
-   var reg = /^(?:13d|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|4|5|6|7|8|9])-?d{5}(d{3}|*{3})$/;
-   if(!reg.test($.trim($('#tel').val())))
-   {
-    alert("手机号码格式不对！");
-    return false;
-   }
-
+// if($.trim($('#tel').val())!="")
+//  {
+//   var reg = /^(?:13d|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|4|5|6|7|8|9])-?d{5}(d{3}|*{3})$/;
+//   if(!reg.test($.trim($('#tel').val())))
+//   {
+//    notie.alert("手机号码格式不对！");
+//    return false;
+//   }
+// }
 
 $(".valid").on("click", async function() {
-    tel = $('#tel').val();
+    tel = $.trim($('#tel').val());
     console.log(`tel/${tel}/code`);
+
+    if (tel == "") {
+        notie.alert("手机号码不能为空！");
+        return false;
+    }
+
     var r = await request(`tel/${tel}/code`, "post");
     console.log(r);
     var second = 4;
@@ -67,54 +69,54 @@ $(".valid").on("click", async function() {
 })
 
 $(".login").on("click", async function() {
-    console.log("a");
-    var validCode = $('#validCode').val();
-    tel = $('#tel').val();
-    console.log(`users/${tel}/sessions`);
-    try {
-        var loginR = await request(`users/${tel}/sessions`, "post", {
-            "token": validCode,
-            "type": "tel"
-        });
-    } catch (e) {
-        if (e.id === 'not_found') {
-            try {
-                var userR = await request(`users`, "post", {
-                    "account": tel,
-                    "token": validCode,
-                    "type": "tel"
-                })
-                var userLoginR = await request(`users/${tel}/sessions`, "post", {
-                    "token": userR.token,
-                    "type": "tel"
-                });
-                localStorage.setItem("token",userLoginR.token)
-                location.href = `/index.html`;
+        console.log("a");
+        var validCode = $('#validCode').val();
+        tel = $('#tel').val();
+        console.log(`users/${tel}/sessions`);
+        try {
+            var loginR = await request(`users/${tel}/sessions`, "post", {
+                "token": validCode,
+                "type": "tel"
+            });
+        } catch (e) {
+            if (e.id === 'not_found') {
+                try {
+                    var userR = await request(`users`, "post", {
+                        "account": tel,
+                        "token": validCode,
+                        "type": "tel"
+                    })
+                    var userLoginR = await request(`users/${tel}/sessions`, "post", {
+                        "token": userR.token,
+                        "type": "tel"
+                    });
+                    localStorage.setItem("token", userLoginR.token)
+                    location.href = `/index.html`;
 
-        } catch (ee) {
-            console.log(ee);
+                } catch (ee) {
+                    console.log(ee);
 
-            if (ee.id === "unauthorized") {
-                alert("验证码错误！")
+                    if (ee.id === "unauthorized") {
+                        notie.alert("验证码错误！")
+                    }
+                    return;
+                }
+                console.log(userLoginR);
+
+                return;
             }
+            console.log(e);
             return;
         }
-        console.log(userLoginR);
-
-        return;
-    }
-    console.log(e);
-    return;
-}
-console.log(loginR);
+        console.log(loginR);
 
 
-})
-//
-// setTimeout(function(){
-//   console.log("a");
-// },1000);
-//
-// setTimeout(function(){
-//   console.log("b");
-// },2000);
+    })
+    //
+    // setTimeout(function(){
+    //   console.log("a");
+    // },1000);
+    //
+    // setTimeout(function(){
+    //   console.log("b");
+    // },2000);

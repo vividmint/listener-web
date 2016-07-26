@@ -28,6 +28,7 @@
     "jquery": "^3.0.0",
     "moment": "^2.13.0",
     "normalize.css": "^4.2.0",
+    "notie": "^3.9.0",
     "whatwg-fetch": "^1.0.0"
   }
 }
