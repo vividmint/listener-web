@@ -8,7 +8,7 @@ import "../assets/font-awesome/scss/font-awesome.scss";
 import "../scss/common.scss";
 import "../scss/users.scss";
 
-var host = "http://192.168.31.172:3000/",
+var host = "http://api.jiantingzhe.com/",
     account = "18613227075";
 
 $.getJSON(`${host}users/${account}/channels`, function(data, status) {
