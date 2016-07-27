@@ -6,6 +6,7 @@ import {
 import "normalize.css";
 import "../assets/font-awesome/scss/font-awesome.scss";
 import "../scss/signin.scss";
+import 'notie/src/notie.scss';
 import notie from 'notie';
 
 document.querySelector(".container").innerHTML = `  <div class="header">
@@ -46,7 +47,7 @@ $(".valid").on("click", async function() {
     console.log(`tel/${tel}/code`);
 
     if (tel == "") {
-        notie.alert("手机号码不能为空！");
+        notie.alert(3, "手机号码不能为空！", 3);
         return false;
     }
 
