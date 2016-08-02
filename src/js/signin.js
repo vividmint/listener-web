@@ -14,7 +14,7 @@ document.querySelector(".container").innerHTML = `  <div class="header">
           <div class="phone-icon">
               <i class="fa fa-user"></i>
           </div>
-          <input type="text" id="tel" class="input">
+          <input type="text" id="tel" class="input" autofocus>
           <button class="button valid">获取验证码</button>
       </div>
   </div>
@@ -31,16 +31,6 @@ document.querySelector(".container").innerHTML = `  <div class="header">
   </div>`
 var tel = $.trim($('#tel').val());
 console.log(tel);
-
-// if($.trim($('#tel').val())!="")
-//  {
-//   var reg = /^(?:13d|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|4|5|6|7|8|9])-?d{5}(d{3}|*{3})$/;
-//   if(!reg.test($.trim($('#tel').val())))
-//   {
-//    notie.alert("手机号码格式不对！");
-//    return false;
-//   }
-// }
 
 $(".valid").on("click", async function() {
     tel = $.trim($('#tel').val());
@@ -70,7 +60,7 @@ $(".valid").on("click", async function() {
 })
 
 $(".login").on("click", async function() {
-        console.log("a");
+
         var validCode = $('#validCode').val();
         tel = $('#tel').val();
         console.log(`users/${tel}/sessions`);
